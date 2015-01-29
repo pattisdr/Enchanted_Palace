@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Game - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-closingNotes">#closingNotes</a>
+    
+    <li ><a href="#method-i-play">#play</a>
+    
+    <li ><a href="#method-i-witchWins">#witchWins</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Game">
+  <h1 id="class-Game" class="class">
+    class Game
+  </h1>
+
+  <section class="description">
+    
+<p>game class. Runs opening script, loops through princesses, and runs closing
+scriptr</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-princess_list" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">princess_list</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-princesses" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">princesses</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File enchanted_palace.rb, line 269</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+                <span class="ruby-identifier">princesses</span> = [<span class="ruby-value">:rose</span>, <span class="ruby-value">:sky</span>, <span class="ruby-value">:violet</span>, <span class="ruby-value">:amber</span>]
+                <span class="ruby-identifier">remove</span> = []
+                <span class="ruby-identifier">$princess_list</span> = []
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;===========================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Welcome to ENCHANTED PALACE! &quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Your objective: find a lantern, mirror, and key hidden inside.&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Then free the Good Queen, banish the Evil Witch and be crowned&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Princess of the Kingdom!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">sleep</span>(<span class="ruby-value">0.5</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot; &quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Remember, frogs are not much use to the Queen!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">sleep</span> <span class="ruby-value">1</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;&#39;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;===========================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;Good Queen: &quot;Who will help me?&quot;&#39;</span>
+                <span class="ruby-identifier">princesses</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">princess</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{princess.capitalize}? Y/N&quot;</span>
+                        <span class="ruby-identifier">response</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">upcase</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Y&#39;</span>
+                                <span class="ruby-identifier">$princess_list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Princess</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">princess</span>)                            
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">remove</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">princess</span>
+                        <span class="ruby-keyword">end</span>          
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">remove</span>
+                        <span class="ruby-identifier">princesses</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">i</span>)
+                <span class="ruby-keyword">end</span>   
+                <span class="ruby-ivar">@princesses</span> = <span class="ruby-identifier">princesses</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot; &quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;===========================================================&quot;</span>
+                <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1.5</span>)
+                <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Evil Witch: &quot;</span>
+                
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">princesses</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+                        <span class="ruby-identifier">print</span> <span class="ruby-identifier">princesses</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;, &quot;</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">princesses</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+                        <span class="ruby-identifier">print</span> <span class="ruby-identifier">princesses</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot; and &quot;</span>).<span class="ruby-identifier">upcase</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;, &quot;</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">print</span> <span class="ruby-identifier">princesses</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">princesses</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>).<span class="ruby-identifier">upcase</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;, and #{princesses[-1].upcase}.&quot;</span>      
+                
+                
+                <span class="ruby-keyword">end</span>
+                
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;I have your Queen.&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;You&#39;ll never save her!&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot; &quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;*evil laugh*&quot;</span>
+                
+                <span class="ruby-identifier">$stable</span> = <span class="ruby-constant">Room</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:stable</span>, <span class="ruby-string">&quot;Stable&quot;</span>, <span class="ruby-string">&quot;horses neighing&quot;</span>)
+                <span class="ruby-identifier">$kitchen</span> = <span class="ruby-constant">Room</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:kitchen</span>, <span class="ruby-string">&quot;Kitchen&quot;</span>, <span class="ruby-string">&quot;bubbling stew&quot;</span>)
+                <span class="ruby-identifier">$dungeon</span> = <span class="ruby-constant">Room</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:dungeon</span>, <span class="ruby-string">&quot;Dungeon&quot;</span>, <span class="ruby-string">&quot;prisoners moaning&quot;</span>)
+                <span class="ruby-identifier">$throneroom</span> = <span class="ruby-constant">Room</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:throneroom</span>, <span class="ruby-string">&quot;Throne Room&quot;</span>, <span class="ruby-string">&quot;trumpets playing&quot;</span>)
+                <span class="ruby-identifier">$garden</span> = <span class="ruby-constant">Room</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:garden</span>, <span class="ruby-string">&quot;Garden&quot;</span>, <span class="ruby-string">&quot;birds chirping&quot;</span>)
+                <span class="ruby-identifier">$bedroom</span> = <span class="ruby-constant">Room</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:bedroom</span>, <span class="ruby-string">&quot;Bedroom&quot;</span>, <span class="ruby-string">&quot;snoring&quot;</span>)
+                <span class="ruby-identifier">$musicroom</span> = <span class="ruby-constant">Room</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:musicroom</span>, <span class="ruby-string">&quot;Music Room&quot;</span>, <span class="ruby-string">&quot;music playing&quot;</span>)
+                
+        
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">play</span>
+                <span class="ruby-identifier">catch</span> <span class="ruby-value">:winner</span>  <span class="ruby-keyword">do</span>
+                                <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+                                        <span class="ruby-identifier">$princess_list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">princess</span><span class="ruby-operator">|</span>
+                                                <span class="ruby-identifier">throw</span> <span class="ruby-value">:winner</span>, <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">found</span> <span class="ruby-operator">!=</span>[] <span class="ruby-keyword">and</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">found</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:key</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">found</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:mirror</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">found</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:lantern</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;girl&quot;</span>
+                                                <span class="ruby-identifier">testing</span> = []
+                                                <span class="ruby-identifier">$princess_list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">girl</span><span class="ruby-operator">|</span>
+                                                        
+                                                        <span class="ruby-identifier">testing</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">girl</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">girl</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;frog&quot;</span>
+                                                <span class="ruby-keyword">end</span>
+                                                
+                                                <span class="ruby-identifier">throw</span> <span class="ruby-value">:winner</span>, <span class="ruby-string">&quot;Evil Witch&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">testing</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@princesses</span>.<span class="ruby-identifier">length</span>
+                                                
+                                                <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">turn</span>
+                                        <span class="ruby-keyword">end</span>        
+                                        
+                                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">closingNotes</span>(<span class="ruby-identifier">winner</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=======================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Good Queen: #{winner.capitalize}, you have collected a mirror, lantern, and key!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Come to the tower! Help me!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Evil Witch: No! Don&#39;t!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+                <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Press any key to cast a spell, freeing the Queen: &quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;*Evil Witch falls from the tower.*&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;AHHHHHHHHHHHHHHHHH!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Good Queen: #{winner.capitalize}, you saved me!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;You are the Princess of the Kingdom!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=======================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+                
+        
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">witchWins</span>(<span class="ruby-identifier">winner</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=======================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;All the princesses have been turned to frogs!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;The Evil Witch wins!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;GAME OVER&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">puts</span>  <span class="ruby-string">&quot;=======================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&quot;</span>
+        
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-identifier">winner</span> = <span class="ruby-identifier">play</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">winner</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Evil Witch&quot;</span> 
+                <span class="ruby-identifier">witchWins</span>(<span class="ruby-identifier">winner</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">closingNotes</span>(<span class="ruby-identifier">winner</span>)
+                
+        <span class="ruby-keyword">end</span>
+        
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-closingNotes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">closingNotes</span><span
+            class="method-args">(winner)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="closingNotes-source">
+            <pre><span class="ruby-comment"># File enchanted_palace.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">closingNotes</span>(<span class="ruby-identifier">winner</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=======================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Good Queen: #{winner.capitalize}, you have collected a mirror, lantern, and key!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Come to the tower! Help me!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Evil Witch: No! Don&#39;t!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Press any key to cast a spell, freeing the Queen: &quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;*Evil Witch falls from the tower.*&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;AHHHHHHHHHHHHHHHHH!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Good Queen: #{winner.capitalize}, you saved me!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;You are the Princess of the Kingdom!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=======================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+        
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-play" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">play</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="play-source">
+            <pre><span class="ruby-comment"># File enchanted_palace.rb, line 330</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">play</span>
+        <span class="ruby-identifier">catch</span> <span class="ruby-value">:winner</span>  <span class="ruby-keyword">do</span>
+                        <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+                                <span class="ruby-identifier">$princess_list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">princess</span><span class="ruby-operator">|</span>
+                                        <span class="ruby-identifier">throw</span> <span class="ruby-value">:winner</span>, <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">found</span> <span class="ruby-operator">!=</span>[] <span class="ruby-keyword">and</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">found</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:key</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">found</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:mirror</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">found</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:lantern</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;girl&quot;</span>
+                                        <span class="ruby-identifier">testing</span> = []
+                                        <span class="ruby-identifier">$princess_list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">girl</span><span class="ruby-operator">|</span>
+                                                
+                                                <span class="ruby-identifier">testing</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">girl</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">girl</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;frog&quot;</span>
+                                        <span class="ruby-keyword">end</span>
+                                        
+                                        <span class="ruby-identifier">throw</span> <span class="ruby-value">:winner</span>, <span class="ruby-string">&quot;Evil Witch&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">testing</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@princesses</span>.<span class="ruby-identifier">length</span>
+                                        
+                                        <span class="ruby-identifier">princess</span>.<span class="ruby-identifier">turn</span>
+                                <span class="ruby-keyword">end</span>        
+                                
+                        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-witchWins" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">witchWins</span><span
+            class="method-args">(winner)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="witchWins-source">
+            <pre><span class="ruby-comment"># File enchanted_palace.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">witchWins</span>(<span class="ruby-identifier">winner</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=======================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+<span class="ruby-identifier">sleep</span>(<span class="ruby-value">2</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;All the princesses have been turned to frogs!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;The Evil Witch wins!&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+<span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;GAME OVER&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+<span class="ruby-identifier">puts</span>  <span class="ruby-string">&quot;=======================================================&quot;</span>.<span class="ruby-identifier">center</span>(<span class="ruby-value">60</span>)
+
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&quot;</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
