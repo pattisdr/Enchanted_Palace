@@ -2,6 +2,7 @@
 
 #Dawn Pattison, initial v 1/28/15
 
+#Princess class stores player attributes and contains most of the game functions
 class Princess
 	attr_accessor :location, :status, :lantern, :mirror, :key, :name, :found
 		def initialize(name)
@@ -17,6 +18,7 @@ class Princess
 			@key = rooms[rand(5)]
 		end
 		
+		#Offers choice: Search a room, or cast a spell?
 		def turn
 			puts ""
 			sleep(0.75)
@@ -32,6 +34,7 @@ class Princess
 			end
 		end
 		
+		#If searching room, offers choices.
 		def whereGoing
 			puts ""
 			inventory
@@ -62,6 +65,78 @@ class Princess
 			goToRoom(going)
 		end
 		
+		#Princess  enters room, searches. runs frog spell.
+		def goToRoom(room)
+			@location = room
+			puts " "
+			puts "You search the #{@location}."
+			search(room)
+			x = eval ("$#{room}")
+			
+			if x.bewitched == 0
+				frogSpell(room)
+			else
+				puts "This room is already bewitched!"
+				puts "Turn into a frog!" if @status == "girl"
+				puts ""
+				@status = "frog"
+			end
+			
+		end
+		
+		#princess searches room for items.
+		def search(room)
+			sleep(2)
+			puts " "
+			x = eval ("$#{room}")
+			if @lantern == room
+				puts "You found a LANTERN in the #{x.name}."
+				@found << :lantern
+			elsif @key == room
+				puts "You found a KEY in the #{x.name}."
+				@found << :key
+			elsif @mirror == room
+				puts "You found a MIRROR in the #{x.name}."
+				@found << :mirror
+			else
+				puts 'Evil Witch: "There\'s nothing for you here! Ha!"'
+			end
+			puts ""
+		
+		end
+		
+			#if princess unlucky, the room she has entered is bewitched, and princess(es) turn into a frog!
+		def frogSpell(room)
+			
+		chance = rand(3)
+		inDanger = []
+		$princess_list.each do |princess|
+			if princess.location == room
+			inDanger.push princess.name if princess.status == "girl"
+			end
+		end
+		if chance == 1 and inDanger != []
+			sleep(2)
+			x = eval ("$#{room}")
+			puts "Evil Witch: Ah ha haa! I hear #{x.sound_effects} and who do I see? #{inDanger.join(", ").upcase} waiting for me! Ah ha haa! Turn into a frog!"
+			puts "Pop! Ribbit, ribbit."
+			$princess_list.each do |princess|
+				princess.status = "frog" if inDanger.include? princess.name
+			end
+			
+			rooms = [:stable, :kitchen, :garden, :dungeon, :throneroom, :bedroom, :musicroom]
+			rooms.each do |i|
+				y = eval("$#{i}")
+				y.bewitched = 0
+			end
+			x.bewitched = 1
+	
+		end
+		end
+		
+		
+		#if casting spell, one of three scenarios can happen 1)save your friend 
+		#2) save your friend and steal her token, 3) steal someone's token
 		def castSpell
 			puts " "
 			inventory
@@ -117,10 +192,13 @@ class Princess
 					nameStolen = selected[0]
 					tokensStolen = selected [1]
 					modTokens(nameStolen, tokensStolen)
+				else
+					puts "You wave your wand! Nothing happens!"
 				end
 			end
 		end
 		
+		#rescues fellow princess from the spell
 		def modFrog(luckyLady)
 			puts "#{@name.capitalize}, you saved #{luckyLady.capitalize} from the spell!"
 				$princess_list.each do |princess|
@@ -130,6 +208,7 @@ class Princess
 				end
 		end
 		
+		#has selected player give token to princess
 		def modTokens(playerAtRisk, tokensAtRisk)
 				itemStolen = tokensAtRisk[rand(tokensAtRisk.length)]
 				puts "#{playerAtRisk.capitalize}, give #{@name.capitalize} a #{itemStolen.upcase}!"
@@ -143,6 +222,7 @@ class Princess
 		
 		end
 		
+		#prints player's inventory
 		def inventory
 			print "Inventory: "
 			if found == []
@@ -155,13 +235,12 @@ class Princess
 			puts " "
 		end
 		
+		#prints player's status
 		def statusGirl
-			
-			puts "Status: #{@status}"
-			
-		
+			puts "Status: #{@status}"	
 		end
 		
+		#prints player's location
 		def locationGirl
 			if @location == ''
 				puts "Location: Entrance"
@@ -169,76 +248,10 @@ class Princess
 				puts "Location: #{@location}"
 			end
 		end
-		def goToRoom(room)
-			@location = room
-			puts " "
-			puts "You search the #{@location}."
-			search(room)
-			x = eval ("$#{room}")
-			
-			if x.bewitched == 0
-				frogSpell(room)
-			else
-				puts "This room is already bewitched!"
-				puts "Turn into a frog!" if @status == "girl"
-				puts ""
-				@status = "frog"
-			end
-			
-		end
-		
-		def search(room)
-			sleep(2)
-			puts " "
-			x = eval ("$#{room}")
-			if @lantern == room
-				puts "You found a LANTERN in the #{x.name}."
-				@found << :lantern
-			elsif @key == room
-				puts "You found a KEY in the #{x.name}."
-				@found << :key
-			elsif @mirror == room
-				puts "You found a MIRROR in the #{x.name}."
-				@found << :mirror
-			else
-				puts 'Evil Witch: "There\'s nothing for you here! Ha!"'
-			end
-			puts ""
-		
-		end
-		
-		def frogSpell(room)
-			
-		chance = rand(3)
-		inDanger = []
-		$princess_list.each do |princess|
-			if princess.location == room
-			inDanger.push princess.name if princess.status == "girl"
-			end
-		end
-		if chance == 1 and inDanger != []
-			sleep(2)
-			x = eval ("$#{room}")
-			puts "Evil Witch: Ah ha haa! I hear #{x.sound_effects} and who do I see? #{inDanger.join(", ").upcase} waiting for me! Ah ha haa! Turn into a frog!"
-			puts "Pop! Ribbit, ribbit."
-			$princess_list.each do |princess|
-				princess.status = "frog" if inDanger.include? princess.name
-			end
-			
-			
-			rooms = [:stable, :kitchen, :garden, :dungeon, :throneroom, :bedroom, :musicroom]
-			rooms.each do |i|
-				y = eval("$#{i}")
-				y.bewitched = 0
-			end
-			x.bewitched = 1
 	
-		end
-	
-		end
-		
 end
 
+#room class
 class Room
 	attr_accessor :name, :reference, :sound_effects, :bewitched
 	def initialize(reference, name, sound_effects, bewitched = 0)
@@ -250,6 +263,7 @@ class Room
 	end
 end
 
+#game class. Runs opening script, loops through princesses, and runs closing scriptr
 class Game
 	attr_accessor :princess_list, :princesses
 	def initialize
